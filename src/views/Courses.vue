@@ -1,8 +1,13 @@
 <template>
+<div>
+<div>
+  <button @click="home" >Regresar</button>
+</div>
   <div class="row">
     <Course v-for="enrolled in enrollments"
             :key="enrolled.courseId + '-' + enrolled.role.id"
             :enrolled="enrolled"></Course>
+  </div>
   </div>
 </template>
 
@@ -10,7 +15,6 @@
 import axios from 'axios';
 import {getAuthenticationToken} from '@/dataStorage';
 import Course from "@/components/Course";
-
 
 const requestPath = '/mis-cursos';
 
@@ -33,6 +37,12 @@ export default {
       } ).catch( error => {
         alert( 'Error con la conexión al servidor' );
       } );
+  },
+  methods: {
+    home: function(){
+      this.$router.push("/principal")
+      
+    }
   }
 }
 </script>
