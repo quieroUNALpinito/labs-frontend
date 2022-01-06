@@ -4,7 +4,7 @@
     <h3>{{ enrolled.courseDurationHours }}</h3>
     <h6>{{ enrolled.role.roleName }}</h6>
   </div>
-</template>
+
 
 <script>
 export default {
@@ -15,6 +15,3 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
