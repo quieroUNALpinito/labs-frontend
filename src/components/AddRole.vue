@@ -61,8 +61,9 @@
           .post( this.buildURI( ), {
               password: this.password
             }, {
-              params: {
-                access_token: localStorage.getItem( "token" )
+              headers: {
+                //access_token: localStorage.getItem( "token" )
+                Authorization: `Bearer ${getAuthenticationToken()}`
               }
             }
           ).then( response => {
